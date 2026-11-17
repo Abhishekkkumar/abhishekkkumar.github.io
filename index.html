@@ -1,237 +1,282 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
 <title>Abhishek Kumar Choubey, Senior Python Developer</title>
 <meta name="description" content="Senior Python developer with 7.5 years of experience in backend development, automation, AWS and CI/CD. Based in New Delhi, India.">
 <meta property="og:title" content="Abhishek Kumar Choubey, Senior Python Developer">
 <meta property="og:description" content="Python backends, REST APIs, microservices, AWS and CI/CD.">
 <meta property="og:type" content="website">
+<script>
+document.documentElement.classList.add('js');
+try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap">
 <style>
-:root{
-  --bg:#F2F4F6; --ink:#15202B; --muted:#58656F; --line:#D3DAE0;
-  --accent:#0A6C74; --accent-ink:#FFFFFF;
-  --head:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
-  color-scheme:light dark;
-}
-@media (prefers-color-scheme:dark){
-  :root{--bg:#0F1519; --ink:#E6ECF0; --muted:#93A1AD; --line:#26323B; --accent:#5CC8CE; --accent-ink:#06191B;}
-}
+:root{--bg:#141414;--ink:#F3F3F1;--muted:#B9B9B4;--rule:#E8E8E4;--dim:#5C5C58;--serif:"Libre Caslon Text",Georgia,"Times New Roman",serif;color-scheme:dark}
+:root[data-theme="light"]{--bg:#FAFAF8;--ink:#161616;--muted:#55554F;--rule:#161616;--dim:#B5B5AF;color-scheme:light}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 var(--body)}
-main{max-width:62rem;margin:0 auto;padding:clamp(2.5rem,7vw,5rem) 1.5rem 4rem}
-a{color:var(--accent);text-underline-offset:.2em;text-decoration-thickness:1px}
-a:hover{text-decoration-thickness:2px}
-a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.75 var(--serif);transition:background .3s,color .3s}
+main{max-width:56rem;margin:0 auto;padding:4.5rem 1.5rem 5rem}
+a{color:inherit;text-underline-offset:.2em}
+a:hover{color:var(--muted)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2px}
 
-.hero{padding-bottom:3rem}
-h1{margin:0;font:800 clamp(2.6rem,8vw,5.25rem)/.95 var(--head);letter-spacing:-.035em}
-.role{margin:1.1rem 0 0;font:500 clamp(1.2rem,3vw,1.6rem)/1.2 var(--head);color:var(--accent)}
-.lede{max-width:40rem;margin:1.5rem 0 0;font-size:1.15rem}
-.links{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.5rem;margin:1.75rem 0 0;font-family:var(--head);font-weight:500}
-.btn{display:inline-block;padding:.6rem 1.1rem;border-radius:.4rem;background:var(--accent);color:var(--accent-ink);text-decoration:none}
-.btn:hover{filter:brightness(1.08)}
-.where{color:var(--muted)}
+.hero{text-align:center}
+h1{margin:0;font:700 clamp(2rem,5vw,2.7rem)/1.15 var(--serif)}
+.role{margin:.35rem 0 0;font-style:italic;color:var(--muted)}
+.contact{display:flex;flex-wrap:wrap;justify-content:center;margin:1.1rem 0 0;padding:0;list-style:none;font-size:.98rem}
+.contact li+li::before{content:"|";margin:0 .75rem}
 
-.sec{display:grid;grid-template-columns:10rem minmax(0,1fr);gap:1rem 2.5rem;padding:2.5rem 0;border-top:1px solid var(--line)}
-h2{margin:0;font:700 1.35rem/1.2 var(--head);letter-spacing:-.01em}
-h3{margin:0;font:700 1.25rem/1.25 var(--head);letter-spacing:-.01em}
-h4{margin:1.5rem 0 .2rem;font:600 1.02rem/1.3 var(--head)}
-.when{margin:0 0 .25rem;font:500 .9rem/1.4 var(--head);color:var(--muted)}
-.org{margin:.1rem 0 0;color:var(--muted)}
-.note{margin:.6rem 0 0}
-ul{margin:.4rem 0 0;padding-left:1.15rem;max-width:44rem}
-li{margin:.3rem 0;padding-left:.2rem}
-li::marker{color:var(--accent)}
+section{padding-top:2.75rem;scroll-margin-top:1rem}
+h2{position:relative;margin:0 0 1.4rem;padding-bottom:.6rem;font:700 1.45rem/1.3 var(--serif)}
+h2::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--rule);transform-origin:left;transition:transform .9s ease}
+h3{margin:0;font:700 1.15rem/1.45 var(--serif)}
+h4{margin:1.1rem 0 .2rem;font:700 1rem/1.45 var(--serif)}
+.meta{margin:.1rem 0 .5rem;font-style:italic;color:var(--muted)}
+.lede{margin:0;line-height:1.9}
+ul.b{margin:.3rem 0 0;padding-left:1.4rem}
+li{margin:.35rem 0}
+.job,.item{margin:0 0 2.4rem}
+.job:last-child,.item:last-child{margin-bottom:0}
+.skills p{margin:.4rem 0;font-size:.98rem}
 
-.job{position:relative;padding:0 0 2.5rem 1.6rem;border-left:2px solid var(--line)}
-.job:last-child{padding-bottom:0}
-.job::before{content:"";position:absolute;left:-7px;top:.35rem;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
-.job.latest::before{background:var(--accent)}
+.dots{position:fixed;right:clamp(1rem,3vw,2.5rem);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:1.4rem;z-index:5}
+.dots a{position:relative;display:block;width:2.2rem;height:1.25rem}
+.dots a::before{content:"";position:absolute;right:0;top:50%;width:100%;height:3px;margin-top:-1px;border-radius:2px;background:var(--dim);transform-origin:right;transform:scaleX(.7);transition:transform .25s,background .25s}
+.dots a.on::before,.dots a:hover::before,.dots a:focus-visible::before{background:var(--ink);transform:scaleX(1)}
+.dots span{position:absolute;right:calc(100% + .8rem);top:50%;transform:translateY(-50%);padding:.15rem .55rem;border-radius:.25rem;background:var(--ink);color:var(--bg);font-size:.82rem;line-height:1.5;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s}
+.dots a:hover span,.dots a:focus-visible span{opacity:1}
+.dots a:hover{color:inherit}
 
-dl{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:.7rem 1.5rem;margin:0}
-dt{font:600 1rem/1.5 var(--head)}
-dd{margin:0}
+.mode{position:fixed;top:1rem;right:1rem;z-index:6;padding:.3rem .85rem;border:1px solid var(--dim);border-radius:2rem;background:var(--bg);color:var(--ink);font:400 .82rem var(--serif);cursor:pointer}
+.mode:hover{border-color:var(--ink)}
 
-.item{margin:0 0 1.75rem}
-.item:last-child{margin-bottom:0}
+.js .rv{opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease}
+.js .rv.in{opacity:1;transform:none}
+.js h2:not(.in)::after{transform:scaleX(0)}
 
-@media (max-width:760px){
-  .sec{grid-template-columns:1fr;gap:1.25rem;padding:2rem 0}
-  dl{grid-template-columns:1fr;gap:.1rem}
-  dd{margin-bottom:.8rem}
+@media (max-width:1000px){.dots{display:none}}
+@media (max-width:560px){main{padding-top:4rem}.contact li+li::before{margin:0 .5rem}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none;transition:none}
+  .js h2:not(.in)::after{transform:none}
+  h2::after,.dots a::before{transition:none}
 }
 @media print{
-  body{background:#fff;color:#000;font-size:10.5pt}
-  .btn,.where{display:none}
-  .sec{break-inside:avoid-page}
+  :root{--bg:#fff;--ink:#000;--muted:#333;--rule:#000}
+  .dots,.mode{display:none}
+  .js .rv{opacity:1;transform:none}
+  .js h2:not(.in)::after{transform:none}
+  section{break-inside:avoid-page}
 }
 </style>
 </head>
 <body>
-<main id="top">
+<button class="mode" id="mode" type="button">Light mode</button>
+<nav class="dots" id="dots" aria-label="Page sections">
+  <a href="#summary"><span>Summary</span></a>
+  <a href="#skills"><span>Competencies</span></a>
+  <a href="#experience"><span>Experience</span></a>
+  <a href="#projects"><span>Projects</span></a>
+  <a href="#education"><span>Education</span></a>
+</nav>
 
+<main>
 <header class="hero">
-  <h1>Abhishek Kumar Choubey</h1>
-  <p class="role">Senior Python developer</p>
-  <p class="lede">7.5 years of experience in backend development, automation and scalable system design. I build Python applications, REST APIs and microservices, with DevOps, AWS and CI/CD as a strong second skill set. I design distributed systems, tune performance and ship production-ready solutions.</p>
-  <p class="links">
-    <a class="btn" href="Resume_Abhishek_Choubey_10_08_26.pdf">Download resume (PDF)</a>
-    <a href="mailto:Abhishek11121995.kumar@gmail.com">Abhishek11121995.kumar@gmail.com</a>
-    <span class="where">New Delhi, India</span>
-    <!-- Optional: add your GitHub, LinkedIn or phone number here if you want them public. -->
-  </p>
+  <h1 class="rv">Abhishek Kumar Choubey</h1>
+  <p class="role rv">Senior Python Developer</p>
+  <ul class="contact rv">
+    <li>New Delhi, India</li>
+    <li><a href="mailto:Abhishek11121995.kumar@gmail.com">Abhishek11121995.kumar@gmail.com</a></li>
+    <li><a href="https://github.com/Abhishekkkumar">github.com/Abhishekkkumar</a></li>
+    <!-- Add your LinkedIn here: <li><a href="https://linkedin.com/in/your-name">linkedin.com/in/your-name</a></li> -->
+    <li><a href="Resume_Abhishek_Choubey_10_08_26.pdf">Download PDF</a></li>
+  </ul>
 </header>
 
-<section class="sec" id="experience" aria-labelledby="h-exp">
-  <h2 id="h-exp">Experience</h2>
-  <div>
+<section id="summary">
+  <h2 class="rv">Professional Summary</h2>
+  <p class="lede rv">Senior Python developer with 7.5 years of experience in backend development, automation and scalable system design. Builds robust Python applications, REST APIs and microservices, with strong secondary expertise in DevOps practices, AWS cloud infrastructure and CI/CD pipelines. Skilled in designing distributed systems, optimizing performance and delivering production-ready solutions.</p>
+</section>
 
-    <article class="job latest">
-      <p class="when">Aug 2024 to Jun 2026</p>
-      <h3>Senior Python Developer</h3>
-      <p class="org">Capgemini India Pvt Ltd, Gurugram, Haryana</p>
-      <p class="note">Client work for Ericsson across three projects.</p>
-
-      <h4>NIR Automation</h4>
-      <ul>
-        <li>Designed and developed Python backend services for automated NIR document generation and structured data extraction.</li>
-        <li>Built containerized microservices with Docker and deployed them on AWS.</li>
-        <li>Implemented asynchronous Python workflows for high-volume document processing, improving scalability.</li>
-        <li>Integrated backend services with CI/CD pipelines (Jenkins, GitHub Actions) and automated testing with Pytest.</li>
-        <li>Worked with cross-functional teams to design distributed systems and optimize performance.</li>
-      </ul>
-
-      <h4>CDD (Continuous Delivery &amp; Deployment)</h4>
-      <ul>
-        <li>Developed Python automation to streamline deployment processes.</li>
-        <li>Upgraded Python runtimes and dependencies while keeping backward compatibility.</li>
-        <li>Worked in containerized environments with Docker and monitored services with CloudWatch and Prometheus.</li>
-      </ul>
-
-      <h4>PAJBI</h4>
-      <ul>
-        <li>Led Python dependency modernization and platform enhancement initiatives.</li>
-        <li>Automated dependency validation, testing and deployment through CI/CD pipelines.</li>
-        <li>Improved system performance and application stability by optimizing backend components.</li>
-      </ul>
-    </article>
-
-    <article class="job">
-      <p class="when">Nov 2022 to Mar 2024</p>
-      <h3>Full Stack Developer</h3>
-      <p class="org">Cylogic Technologies LLP, Hyderabad, Telangana</p>
-      <h4>CyDrive App and CyDrive Customer Portal</h4>
-      <ul>
-        <li>Built REST APIs with NestJS and Python (Django, TypeORM).</li>
-        <li>Developed the customer portal with Angular and a Postgres database.</li>
-        <li>Handled DevOps tasks with Terraform, Docker and Kubernetes.</li>
-        <li>Contributed to multiple product features and backend enhancements.</li>
-      </ul>
-    </article>
-
-    <article class="job">
-      <p class="when">Nov 2021 to Oct 2022</p>
-      <h3>Full Stack Developer</h3>
-      <p class="org">Axiom, Hyderabad, Telangana</p>
-      <h4>CyDrive Customer Portal</h4>
-      <ul>
-        <li>Built a REST API with NestJS and Postgres, and the UI with Angular.</li>
-        <li>Shipped multiple new product features and worked on DevOps.</li>
-        <li>Worked with Terraform, Docker and Kubernetes.</li>
-        <li>Worked with Python, TypeORM and Django.</li>
-      </ul>
-    </article>
-
-    <article class="job">
-      <p class="when">Mar 2018 to Oct 2021</p>
-      <h3>IoT Developer</h3>
-      <p class="org">Pratikshat Solutions LLP, New Delhi</p>
-
-      <h4>Digital Electricity Meter Reading Mobile Application</h4>
-      <ul>
-        <li>Developed OCR training data pipelines in Python using deep learning, and integrated Android components with the trained models to capture and process real-time meter readings directly from devices.</li>
-        <li>Enabled data transmission of kWh/kVh readings to the server for billing automation.</li>
-      </ul>
-
-      <h4>DOWS (Displacement &amp; Height of OHE Wire)</h4>
-      <ul>
-        <li>Built robust, high-availability Python software to interface with specialized railway hardware.</li>
-        <li>Contributed to a device used for catenary wire and mast testing in railway infrastructure.</li>
-      </ul>
-
-      <h4>ILC (Intelligent Light Controller)</h4>
-      <ul>
-        <li>Supported hardware design and managed end-to-end testing.</li>
-        <li>Contributed to a web-based platform for command, control and real-time monitoring of voltage, current and power consumption.</li>
-      </ul>
-    </article>
-
+<section id="skills" class="skills">
+  <h2 class="rv">Core Competencies</h2>
+  <div class="rv">
+    <p><b>Python and backend:</b> Python, Django, Flask, REST APIs, System Design, Microservices</p>
+    <p><b>DevOps and cloud:</b> AWS (EC2, S3, IAM, EKS, Route 53), CI/CD Pipelines, Docker, Kubernetes</p>
+    <p><b>Automation and tools:</b> Git, GitHub Actions, Jenkins, Helm, Ansible</p>
+    <p><b>Databases:</b> PostgreSQL, MySQL</p>
+    <p><b>Testing:</b> Unit Testing, Integration Testing, Pytest</p>
+    <p><b>Operating systems:</b> Linux, Shell Scripting (Bash)</p>
   </div>
 </section>
 
-<section class="sec" id="skills" aria-labelledby="h-skills">
-  <h2 id="h-skills">Skills</h2>
-  <dl>
-    <dt>Python and backend</dt>
-    <dd>Python, Django, Flask, REST APIs, system design, microservices</dd>
-    <dt>DevOps and cloud</dt>
-    <dd>AWS (EC2, S3, IAM, EKS, Route 53), CI/CD pipelines, Docker, Kubernetes</dd>
-    <dt>Automation and tools</dt>
-    <dd>Git, GitHub Actions, Jenkins, Helm, Ansible</dd>
-    <dt>Databases</dt>
-    <dd>PostgreSQL, MySQL</dd>
-    <dt>Testing</dt>
-    <dd>Unit testing, integration testing, Pytest</dd>
-    <dt>Operating systems</dt>
-    <dd>Linux, Bash scripting</dd>
-  </dl>
+<section id="experience">
+  <h2 class="rv">Professional Experience</h2>
+
+  <article class="job rv">
+    <h3>Senior Python Developer – Capgemini India Pvt Ltd</h3>
+    <p class="meta">Gurugram, Haryana (Ericsson account) • Aug 2024 – Jun 2026</p>
+
+    <h4>NIR Automation</h4>
+    <ul class="b">
+      <li>Designed and developed Python backend services for automated NIR document generation and structured data extraction.</li>
+      <li>Built containerized microservices with Docker and deployed them on AWS.</li>
+      <li>Implemented asynchronous Python workflows for high-volume document processing, improving scalability.</li>
+      <li>Integrated backend services with CI/CD pipelines (Jenkins, GitHub Actions) and automated testing with Pytest.</li>
+      <li>Worked with cross-functional teams to design distributed systems and optimize performance.</li>
+    </ul>
+
+    <h4>CDD (Continuous Delivery &amp; Deployment)</h4>
+    <ul class="b">
+      <li>Developed Python automation to streamline deployment processes.</li>
+      <li>Upgraded Python runtimes and dependencies while keeping backward compatibility.</li>
+      <li>Worked in containerized environments with Docker and monitored services with CloudWatch and Prometheus.</li>
+    </ul>
+
+    <h4>PAJBI</h4>
+    <ul class="b">
+      <li>Led Python dependency modernization and platform enhancement initiatives.</li>
+      <li>Automated dependency validation, testing and deployment through CI/CD pipelines.</li>
+      <li>Improved system performance and application stability by optimizing backend components.</li>
+    </ul>
+  </article>
+
+  <article class="job rv">
+    <h3>Full Stack Developer – Cylogic Technologies LLP</h3>
+    <p class="meta">Hyderabad, Telangana • Nov 2022 – Mar 2024</p>
+    <h4>CyDrive App and CyDrive Customer Portal</h4>
+    <ul class="b">
+      <li>Built REST APIs with NestJS and Python (Django, TypeORM).</li>
+      <li>Developed the customer portal with Angular and a Postgres database.</li>
+      <li>Handled DevOps tasks with Terraform, Docker and Kubernetes.</li>
+      <li>Contributed to multiple product features and backend enhancements.</li>
+    </ul>
+  </article>
+
+  <article class="job rv">
+    <h3>Full Stack Developer – Axiom</h3>
+    <p class="meta">Hyderabad, Telangana • Nov 2021 – Oct 2022</p>
+    <h4>CyDrive Customer Portal</h4>
+    <ul class="b">
+      <li>Built a REST API with NestJS and Postgres, and the UI with Angular.</li>
+      <li>Shipped multiple new product features and worked on DevOps.</li>
+      <li>Worked with Terraform, Docker and Kubernetes.</li>
+      <li>Worked with Python, TypeORM and Django.</li>
+    </ul>
+  </article>
+
+  <article class="job rv">
+    <h3>IoT Developer – Pratikshat Solutions LLP</h3>
+    <p class="meta">New Delhi • Mar 2018 – Oct 2021</p>
+
+    <h4>Digital Electricity Meter Reading Mobile Application</h4>
+    <ul class="b">
+      <li>Developed OCR training data pipelines in Python using deep learning, and integrated Android components with the trained models to capture and process real-time meter readings directly from devices.</li>
+      <li>Enabled data transmission of kWh/kVh readings to the server for billing automation.</li>
+    </ul>
+
+    <h4>DOWS (Displacement &amp; Height of OHE Wire)</h4>
+    <ul class="b">
+      <li>Built robust, high-availability Python software to interface with specialized railway hardware.</li>
+      <li>Contributed to a device used for catenary wire and mast testing in railway infrastructure.</li>
+    </ul>
+
+    <h4>ILC (Intelligent Light Controller)</h4>
+    <ul class="b">
+      <li>Supported hardware design and managed end-to-end testing.</li>
+      <li>Contributed to a web-based platform for command, control and real-time monitoring of voltage, current and power consumption.</li>
+    </ul>
+  </article>
 </section>
 
-<section class="sec" id="projects" aria-labelledby="h-proj">
-  <h2 id="h-proj">Projects</h2>
-  <div>
-    <div class="item">
-      <h3>NDMC Smart City Environmental Sensor</h3>
-      <p class="when">Nov 2018 to Jun 2019, New Delhi</p>
-      <p class="note">Built for the NDMC Command and Control System to monitor environmental conditions. It pushes live sensor data to the server.</p>
-    </div>
-    <div class="item">
-      <h3>Remote Control Car</h3>
-      <p class="when">Oct 2017 to Nov 2017, Faridabad</p>
-      <p class="note">A college project that received an award from the Faridabad Industries Association.</p>
-    </div>
+<section id="projects">
+  <h2 class="rv">Projects</h2>
+  <div class="item rv">
+    <h3>NDMC Smart City Environmental Sensor</h3>
+    <p class="meta">New Delhi • Nov 2018 – Jun 2019</p>
+    <p>Built for the NDMC Command and Control System to monitor environmental conditions. It pushes live sensor data to the server.</p>
+  </div>
+  <div class="item rv">
+    <h3>Remote Control Car</h3>
+    <p class="meta">Faridabad • Oct 2017 – Nov 2017</p>
+    <p>A college project that received an award from the Faridabad Industries Association.</p>
   </div>
 </section>
 
-<section class="sec" id="education" aria-labelledby="h-edu">
-  <h2 id="h-edu">Education</h2>
-  <div>
-    <div class="item">
-      <h3>B.Tech in Computer Science and Engineering</h3>
-      <p class="when">May 2018</p>
-      <p class="org">Al-Falah University, Faridabad, Haryana</p>
-    </div>
-    <div class="item">
-      <h3>12th, Science</h3>
-      <p class="when">April 2014</p>
-      <p class="org">Sardar Vallabh Bhai Patel School, Tughlakabad, New Delhi</p>
-    </div>
-    <div class="item">
-      <h3>10th</h3>
-      <p class="when">April 2012</p>
-      <p class="org">SRSD Senior Secondary School, Lajpat Nagar, New Delhi</p>
-    </div>
+<section id="education">
+  <h2 class="rv">Education</h2>
+  <div class="item rv">
+    <h3>B.Tech in Computer Science and Engineering – Al-Falah University</h3>
+    <p class="meta">Faridabad, Haryana • May 2018</p>
+  </div>
+  <div class="item rv">
+    <h3>12th, Science – Sardar Vallabh Bhai Patel School</h3>
+    <p class="meta">Tughlakabad, New Delhi • April 2014</p>
+  </div>
+  <div class="item rv">
+    <h3>10th – SRSD Senior Secondary School</h3>
+    <p class="meta">Lajpat Nagar, New Delhi • April 2012</p>
   </div>
 </section>
-
 </main>
+
+<script>
+(function(){
+  var root=document.documentElement;
+
+  // Light / dark toggle, remembered between visits
+  var btn=document.getElementById('mode');
+  function label(){btn.textContent=root.dataset.theme==='dark'?'Light mode':'Dark mode'}
+  label();
+  btn.addEventListener('click',function(){
+    var next=root.dataset.theme==='dark'?'light':'dark';
+    root.dataset.theme=next;
+    try{localStorage.setItem('theme',next)}catch(e){}
+    label();
+  });
+
+  // Reveal on scroll: headings draw their rule, blocks fade in
+  var items=[].slice.call(document.querySelectorAll('.rv'));
+  if('IntersectionObserver' in window){
+    var reveal=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('in');reveal.unobserve(e.target)}
+      });
+    },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    items.forEach(function(el){reveal.observe(el)});
+  }else{
+    items.forEach(function(el){el.classList.add('in')});
+  }
+
+  // Side dashes follow the section you are reading
+  var links=[].slice.call(document.querySelectorAll('#dots a'));
+  var sections=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function setActive(i){
+    links.forEach(function(a,n){
+      a.classList.toggle('on',n===i);
+      if(n===i){a.setAttribute('aria-current','true')}else{a.removeAttribute('aria-current')}
+    });
+  }
+  function spy(){
+    var line=window.innerHeight*.35,current=0;
+    sections.forEach(function(s,i){if(s.getBoundingClientRect().top<=line)current=i});
+    if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4)current=sections.length-1;
+    setActive(current);
+  }
+  var ticking=false;
+  window.addEventListener('scroll',function(){
+    if(!ticking){ticking=true;requestAnimationFrame(function(){spy();ticking=false})}
+  },{passive:true});
+  window.addEventListener('resize',spy);
+  spy();
+})();
+</script>
 </body>
 </html>
